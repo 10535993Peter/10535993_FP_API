@@ -1,0 +1,5 @@
+Building the docker file:
+Expose port 3000 as were not building this on nginx
+If you want to expose port 80 you'll need to do a proxy 
+pass to say when traffic comes in from port 80 serve from 3000.
+Run npm install and then run start or run the "cmd node server.js" 
