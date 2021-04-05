@@ -6,9 +6,11 @@ const routes = require("./routes");
 
 console.log(process.argv);
 
-//for mongoose connect you can pass in the variable fromt he realease pipeline after npm start//
-//passa rguement for database connection//
-mongoose.connect("mongodb://localhost:27017/ca-db", {useNewUrlParser: true}).then(()=>{
+//for mongoose connect you can pass in the variable from the realease pipeline after npm start//
+//pass an arguement for database connection//
+////remove --- mongodb://localhost:27017/ca-db
+//URL may need to change to mongodb://mongo-service/database
+mongoose.connect("mongodb://mongo-service/database", {useNewUrlParser: true}).then(()=>{
     const app = express();
     app.use(session({
         secret : "caAPISecret",
