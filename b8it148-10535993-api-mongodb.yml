@@ -3,22 +3,22 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name:  ca-10535993-mongo-staging
+  name:  pf-10535993-mongo-staging
   
 spec:
   selector:
     matchLabels:
-      deployment-name: ca-10535993-mongo-staging
+      deployment-name: pf-10535993-mongo-staging
   replicas: 1
   template:
     metadata:
       labels:
-        deployment-name: ca-10535993-mongo-staging
+        deployment-name: pf-10535993-mongo-staging
     spec:
       containers:
-        - name: ca-10535993-mongo-container-staging
+        - name: pf-10535993-mongo-container-staging
         #image may need to be updated:
-          image: ca-10535993-mongo-image:v1
+          image: pf-10535993-mongo-image:v1
           imagePullPolicy: Always
           env: 
             - name: MONGO_10535993_INITDB_DB
@@ -32,18 +32,18 @@ kind: Service
 
 metadata:
   labels:
-    service-label: ca-10535993-mongo-loadbalancer-staging
-  name: ca-10535993-mongo-loadbalancer-staging
+    service-label: pf-10535993-mongo-loadbalancer-staging
+  name: pf-10535993-mongo-loadbalancer-staging
 
 spec:
   type: LoadBalancer
   ports:
-  - name: ca-10535993-mongo-loadbalancer-service-port-staging
+  - name: pf-10535993-mongo-loadbalancer-service-port-staging
     port: 27017
     targetPort: 27017
     protocol: TCP
   selector:
-    deployment-name: ca-10535993-mongo-loadbalancer-staging
+    deployment-name: pf-10535993-mongo-loadbalancer-staging
 
 ---
 apiVersion: v1
@@ -52,14 +52,14 @@ kind: Service
 
 metadata:
   labels:
-    service-label: ca-10535993-mongo-cluster-service-staging
-  name: ca-10535993-mongo-cluster-service-staging
+    service-label: pf-10535993-mongo-cluster-service-staging
+  name: pf-10535993-mongo-cluster-service-staging
 
 spec:
   type: ClusterIP
   ports:
-  - name: ca-10535993-mongo-cluster-service-port-staging
+  - name: pf-10535993-mongo-cluster-service-port-staging
     port: 80
     protocol: TCP
   selector:
-    deployment-name: ca-10535993-mongo-cluster-service-staging
+    deployment-name: pf-10535993-mongo-cluster-service-staging
