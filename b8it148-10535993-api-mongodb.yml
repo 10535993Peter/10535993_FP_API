@@ -32,8 +32,8 @@ kind: Service
 
 metadata:
   labels:
-    service-label: ca-10535993-mongo-service-staging
-  name: ca-10535993-mongo-service-staging
+    service-label: ca-10535993-mongo-loadbalancer-staging
+  name: ca-10535993-mongo-loadbalancer-staging
 
 spec:
   type: LoadBalancer
@@ -43,4 +43,23 @@ spec:
     targetPort: 27017
     protocol: TCP
   selector:
-    deployment-name: ca-10535993-mongo-staging
+    deployment-name: ca-10535993-mongo-loadbalancer-staging
+
+---
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  labels:
+    service-label: ca-10535993-mongo-cluster-service-staging
+  name: ca-10535993-mongo-cluster-service-staging
+
+spec:
+  type: ClusterIP
+  ports:
+  - name: ca-10535993-mongo-cluster-service-port-staging
+    port: 80
+    protocol: TCP
+  selector:
+    deployment-name: ca-10535993-mongo-cluster-service-staging

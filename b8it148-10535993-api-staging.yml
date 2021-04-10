@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       deployment-name: ca-10535993-api-staging
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -39,7 +39,7 @@ spec:
     port: 3000
     protocol: TCP
   selector:
-    deployment-name: ca-10535993-api-staging
+    deployment-name: ca-10535993-api-loadbalancer-staging
 ---
 apiVersion: v1
 
@@ -57,5 +57,5 @@ spec:
     port: 80
     protocol: TCP
   selector:
-    deployment-name: ca-10535993-api-staging
+    deployment-name: ca-10535993-api-cluster-service-staging
 
