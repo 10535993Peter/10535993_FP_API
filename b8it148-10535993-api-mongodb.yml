@@ -3,21 +3,22 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: mongo-10535993-deployment
+  name:  ca-10535993-mongo-staging
   
 spec:
   selector:
     matchLabels:
-      deployment-name: mongo-10535993-pod
+      deployment-name: ca-10535993-mongo-staging
   replicas: 1
   template:
     metadata:
       labels:
-        deployment-name: mongo-10535993-pod
+        deployment-name: ca-10535993-mongo-staging
     spec:
       containers:
-        - name: mongo-10535993-container
-          image: mongo-10535993-image:v1
+        - name: ca-10535993-mongo-container-staging
+        #image may need to be updated:
+          image: ca-10535993-mongo-image:v1
           imagePullPolicy: Always
           env: 
             - name: MONGO_10535993_INITDB_DB
@@ -31,15 +32,15 @@ kind: Service
 
 metadata:
   labels:
-    service-label: mongo-10535993-service
-  name: mongo-10535993-service
+    service-label: ca-10535993-mongo-service-staging
+  name: ca-10535993-mongo-service-staging
 
 spec:
   type: LoadBalancer
   ports:
-  - name: mongo-10535993-loadbalancer-service-port
+  - name: ca-10535993-mongo-loadbalancer-service-port-staging
     port: 27017
     targetPort: 27017
     protocol: TCP
   selector:
-    deployment-name: mongo-10535993-pod
+    deployment-name: ca-10535993-mongo-staging

@@ -20,7 +20,7 @@ mongoose.connect("mongodb://mongo-service/database", {useNewUrlParser: true}).th
 
 //origin: 'http://localhost:4200'//
     app.use(express.json());
-//
+// update below with app.use(cors({credentials: true, origin:process.argv[2], process.argv[3]}));
     app.use(cors({credentials: true, origin:process.argv[2]}));
     app.use("/api", routes);
 //pass arguement to whitelist the post of the frontend//
