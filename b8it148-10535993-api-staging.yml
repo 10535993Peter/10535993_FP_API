@@ -30,7 +30,7 @@ kind: Service
 metadata:
   labels:
     service-label: pf-10535993-api-loadbalancer-service-staging
-  name: pf-10535993-api-loadbalancer-service
+  name: pf-10535993-api-loadbalancer-service-staging
 
 spec:
   type: LoadBalancer
