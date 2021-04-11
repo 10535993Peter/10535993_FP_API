@@ -45,21 +45,21 @@ spec:
   selector:
     deployment-name: pf-10535993-mongo-loadbalancer-staging
 
----
-apiVersion: v1
+# ---
+# apiVersion: v1
 
-kind: Service
+# kind: Service
 
-metadata:
-  labels:
-    service-label: pf-10535993-mongo-cluster-service-staging
-  name: pf-10535993-mongo-cluster-service-staging
+# metadata:
+#   labels:
+#     service-label: pf-10535993-mongo-cluster-service-staging
+#   name: pf-10535993-mongo-cluster-service-staging
 
-spec:
-  type: ClusterIP
-  ports:
-  - name: pf-10535993-mongo-cluster-service-port-staging
-    port: 80
-    protocol: TCP
-  selector:
-    deployment-name: pf-10535993-mongo-cluster-service-staging
+# spec:
+#   type: ClusterIP
+#   ports:
+#   - name: pf-10535993-mongo-cluster-service-port-staging
+#     port: 80
+#     protocol: TCP
+#   selector:
+#     deployment-name: pf-10535993-mongo-cluster-service-staging

@@ -11,9 +11,9 @@
 
 ### STAGE 1: Build ###
 FROM node:12.7-alpine AS build
-# ARG PORT01
-# ARG PORT02
-# ARG MONGOURL
+ARG PORT01
+ARG PORT02
+ARG MONGOURL
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
