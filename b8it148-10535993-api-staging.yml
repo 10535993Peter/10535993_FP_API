@@ -18,7 +18,7 @@ spec:
       containers:
         - name: pf-10535993-api-container-staging
         #image may need to be updated:
-          image: pf-10535993-api-image:v1
+          image: cab8it148.azurecr.io/pf-10535993-api-staging-$(Build.BuildId)-$(Release.ReleaseName)
           imagePullPolicy: Always
           ports:
           - containerPort: 3000

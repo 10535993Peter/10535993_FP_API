@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: pf-10535993-mongo-container-staging
-        #image may need to be updated:
-          image: pf-10535993-mongo-image:v1
+        #image was updated from pf-10535993-mongo-image:v1
+          image: mongo
           imagePullPolicy: Always
           env: 
             - name: MONGO_10535993_INITDB_DB
