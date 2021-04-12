@@ -16,9 +16,9 @@ spec:
         deployment-name: pf-10535993-api-prod
     spec:
       containers:
-        - name: pf-10535993-api-container-prod
+        - name: pf-10535993-api-prod
         #image may need to be updated: (replaced pf-10535993-api-prod-$(Build.BuildId)-$(Release.ReleaseName))
-          image: cab8it148.azurecr.io/pf-10535993-api-prod:pf-10535993-api-prod-5c1d46f145e917fc2eaff1140967946cf86db819-Release-34
+          image: cab8it148.azurecr.io/pf-10535993-api-prod:pf-10535993-api-prod-714109ad1eadd1f5829d8797a83d30803f993b10-Release-37
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
