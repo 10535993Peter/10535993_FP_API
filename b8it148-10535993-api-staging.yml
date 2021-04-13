@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: pf-10535993-api-staging
-          image: cab8it148.azurecr.io/pf-10535993-api-staging:__image-api__
+          image: cab8it148.azurecr.io/pf-10535993-api-staging:$(__image-api__)
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
