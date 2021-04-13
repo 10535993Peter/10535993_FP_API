@@ -21,9 +21,9 @@ mongoose.connect("mongodb://localhost:27017/ca-db", {useNewUrlParser: true}).the
 //origin: 'http://localhost:4200'//
     app.use(express.json());
 // update below with app.use(cors({credentials: true, origin:process.argv[2], process.argv[3]}));
-    app.use(cors({credentials: true, origin:process.argv[2]}));
+    app.use(cors({credentials: true, origin:process.argv[2],}));
     app.use("/api", routes);
-//pass arguement to whitelist the post of the frontend//
+//pass arguement to whitelist the port of the frontend//
     app.listen(3000, ()=>{
         console.log("CA API started on port 3000, test using http://localhost:3000");
     });

@@ -18,7 +18,7 @@ spec:
       containers:
         - name: pf-10535993-api-prod
         #image may need to be updated: (replaced pf-10535993-api-prod-$(Build.BuildId)-$(Release.ReleaseName))
-          image: cab8it148.azurecr.io/pf-10535993-api-prod:pf-10535993-api-prod-714109ad1eadd1f5829d8797a83d30803f993b10-Release-37
+          image: cab8it148.azurecr.io/pf-10535993-api-prod:latest
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
