@@ -17,7 +17,6 @@ spec:
     spec:
       containers:
         - name: pf-10535993-api-staging
-        #image may need to be updated: (replaced pf-10535993-api-staging-$(Build.BuildId)-$(Release.ReleaseName))
           image: cab8it148.azurecr.io/pf-10535993-api-staging:__image-api__
           imagePullPolicy: Always
           ports:
@@ -40,22 +39,3 @@ spec:
     protocol: TCP
   selector:
     deployment-name: pf-10535993-api-loadbalancer-staging
-# ---
-# apiVersion: v1
-
-# kind: Service
-
-# metadata:
-#   labels:
-#     service-label: pf-10535993-api-cluster-service-staging
-#   name: pf-10535993-api-cluster-service-staging
-
-# spec:
-#   type: ClusterIP
-#   ports:
-#   - name: pf-10535993-api-cluster-service-port-staging
-#     port: 80
-#     protocol: TCP
-#   selector:
-#     deployment-name: pf-10535993-api-cluster-service-staging
-
