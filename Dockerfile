@@ -20,7 +20,7 @@ RUN npm install
 COPY . .
 RUN echo "npm run start $PORT01 $PORT02 $MONGOURL" > run.sh
 EXPOSE 3000
-CMD ["sh", "run.sh"]
+#CMD ["sh", "run.sh"]
 
 
 
