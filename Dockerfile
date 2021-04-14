@@ -3,7 +3,7 @@ FROM node:14-alpine AS build
 ARG PORT01
 ARG PORT02
 ARG MONGOURL
-WORKDIR /app
+WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .

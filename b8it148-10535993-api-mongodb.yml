@@ -1,10 +1,7 @@
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
   name:  pf-10535993-mongo-staging
-  
 spec:
   selector:
     matchLabels:
@@ -17,7 +14,6 @@ spec:
     spec:
       containers:
         - name: pf-10535993-mongo-container-staging
-        #image was updated from pf-10535993-mongo-image:v1
           image: mongo
           imagePullPolicy: Always
           env: 
@@ -27,39 +23,17 @@ spec:
             - containerPort: 27017 
 ---
 apiVersion: v1
-
 kind: Service
-
 metadata:
   labels:
     service-label: pf-10535993-mongo-loadbalancer-staging
   name: pf-10535993-mongo-loadbalancer-staging
-
 spec:
   type: LoadBalancer
   ports:
   - name: pf-10535993-mongo-loadbalancer-service-port-staging
-    port: 27017
-    targetPort: 27017
-    protocol: TCP
+      port: 27017
+      targetPort: 27017
+      protocol: TCP
   selector:
     deployment-name: pf-10535993-mongo-loadbalancer-staging
-
-# ---
-# apiVersion: v1
-
-# kind: Service
-
-# metadata:
-#   labels:
-#     service-label: pf-10535993-mongo-cluster-service-staging
-#   name: pf-10535993-mongo-cluster-service-staging
-
-# spec:
-#   type: ClusterIP
-#   ports:
-#   - name: pf-10535993-mongo-cluster-service-port-staging
-#     port: 80
-#     protocol: TCP
-#   selector:
-#     deployment-name: pf-10535993-mongo-cluster-service-staging
