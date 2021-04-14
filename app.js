@@ -10,8 +10,8 @@ console.log(process.argv);
 //pass an arguement for database connection//
 ////remove --- mongodb://localhost:27017/ca-db
 //mongodb://pf-10535993-mongo-loadbalancer-staging/database
-//URL may need to change to mongodb://mongo-service/database
-mongoose.connect("mongodb://mongo-service/database", {useNewUrlParser: true}).then(()=>{
+
+mongoose.connect("mongodb://localhost:27017/ca-db", {useNewUrlParser: true}).then(()=>{
     const app = express();
     app.use(session({
         secret : "caAPISecret",
