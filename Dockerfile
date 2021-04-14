@@ -7,6 +7,6 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN echo "npm run start $PORT01 $PORT02 $MONGOURL" > run.sh
+RUN echo "npm run start $PORT01 $PORT02 $MONGOURL" > serve.sh
 EXPOSE 3000
-CMD ["sh", "run.sh"]
+CMD ["sh", "serve.sh"]
