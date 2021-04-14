@@ -8,11 +8,8 @@ console.log(process.argv);
 
 //for mongoose connect you can pass in the variable from the release pipeline after npm start//
 //pass an arguement for database connection//
-////remove --- mongodb://localhost:27017/ca-db
-//mongodb://pf-10535993-mongo-loadbalancer-staging/database
-//$MONGOURL
 
-mongoose.connect("mongodb://pf-10535993-mongo-loadbalancer-staging/database", {useNewUrlParser: true}).then(()=>{
+mongoose.connect(process.argv[4], {useNewUrlParser: true}).then(()=>{
     const app = express();
     app.use(session({
         secret : "caAPISecret",
@@ -22,12 +19,9 @@ mongoose.connect("mongodb://pf-10535993-mongo-loadbalancer-staging/database", {u
 
 //origin: 'http://localhost:4200'//
     app.use(express.json());
-// update below with app.use(cors({credentials: true, origin:process.argv[2], process.argv[3]}));
     app.use(cors({credentials: true, origin:process.argv[2], origin:process.argv[3]}));
     app.use("/api", routes);
-//pass arguement to whitelist the port of the frontend//
-//http://40.67.253.31/
-//removed http://localhost:3000//
+
     app.listen(3000, ()=>{
         console.log("CA API started on port 3000, test using http://localhost:3000/");
     });
