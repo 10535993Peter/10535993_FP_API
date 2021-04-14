@@ -11,7 +11,7 @@ console.log(process.argv);
 ////remove --- mongodb://localhost:27017/ca-db
 //mongodb://pf-10535993-mongo-loadbalancer-staging/database
 
-mongoose.connect("mongodb://localhost:27017/ca-db", {useNewUrlParser: true}).then(()=>{
+mongoose.connect("mongodb://pf-10535993-mongo-loadbalancer-staging/database", {useNewUrlParser: true}).then(()=>{
     const app = express();
     app.use(session({
         secret : "caAPISecret",
