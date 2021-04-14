@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name:  pf-10535993-mongo-prod
 spec:
+  replicas: 1
   selector:
     matchLabels:
       deployment-name: pf-10535993-mongo-prod
-  replicas: 1
   template:
     metadata:
       labels:
@@ -15,7 +15,6 @@ spec:
       containers:
         - name: pf-10535993-mongo-container-prod
           image: mongo
-          imagePullPolicy: Always
           env: 
             - name: MONGO_10535993_INITDB_DB
               value: database
