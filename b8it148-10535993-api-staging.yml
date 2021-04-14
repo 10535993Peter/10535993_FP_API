@@ -31,5 +31,6 @@ spec:
     - name: pf-10535993-api-loadbalancer-service-port-staging
       port: 3000
       protocol: TCP
+      link: MONGO_10535993_INITDB_DB
   selector:
     deployment-name: pf-10535993-api-loadbalancer-staging
