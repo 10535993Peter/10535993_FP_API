@@ -25,9 +25,10 @@ mongoose.connect("mongodb://mongo-service/database", {useNewUrlParser: true}).th
     app.use(cors({credentials: true, origin:process.argv[2],}));
     app.use("/api", routes);
 //pass arguement to whitelist the port of the frontend//
+//http://40.67.253.31/
 //removed http://localhost:3000//
     app.listen(3000, ()=>{
-        console.log("CA API started on port 3000, test using http://40.67.253.31/");
+        console.log("CA API started on port 3000, test using http://localhost:3000/");
     });
 });
 
