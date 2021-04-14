@@ -9,8 +9,9 @@ console.log(process.argv);
 //for mongoose connect you can pass in the variable from the realease pipeline after npm start//
 //pass an arguement for database connection//
 ////remove --- mongodb://localhost:27017/ca-db
+//mongodb://pf-10535993-mongo-loadbalancer-staging/database
 //URL may need to change to mongodb://mongo-service/database
-mongoose.connect("mongodb://pf-10535993-mongo-loadbalancer-staging/database", {useNewUrlParser: true}).then(()=>{
+mongoose.connect("mongodb://mongo-service/database", {useNewUrlParser: true}).then(()=>{
     const app = express();
     app.use(session({
         secret : "caAPISecret",
