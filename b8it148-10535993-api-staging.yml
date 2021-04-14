@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       deployment-name: pf-10535993-api-staging
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
