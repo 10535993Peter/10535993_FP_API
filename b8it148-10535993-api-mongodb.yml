@@ -31,7 +31,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: pf-10535993-mongo-loadbalancer-service-port-staging
+    - name: pf-10535993-mongo-loadbalancer-service-port-staging
       port: 27017
       targetPort: 27017
       protocol: TCP
