@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 console.log(process.argv);
-
+var mongo = process.argv[4];
 //for mongoose connect you can pass in the variable from the release pipeline after npm start//
 //pass an arguement for database connection//
 
-mongoose.connect(process.argv[4], {useNewUrlParser: true}).then(()=>{
+mongoose.connect(mongo, {useNewUrlParser: true}).then(()=>{
     const app = express();
     app.use(session({
         secret : "caAPISecret",
