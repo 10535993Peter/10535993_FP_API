@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name: pf-10535993-api-staging
 spec:
+  replicas: 1
   selector:
     matchLabels:
       deployment-name: pf-10535993-api-staging
-  replicas: 1
   template:
     metadata:
       labels:
@@ -18,8 +18,6 @@ spec:
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
-      imagePullSecrets:
-      - name: image-secret-api-staging
 ---
 apiVersion: v1
 kind: Service
