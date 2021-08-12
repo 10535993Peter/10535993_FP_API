@@ -1,15 +1,4 @@
 apiVersion: apps/v1
-kind: Pod
-metadata:
-  name: pf-10535993-api-staging
-spec:
-  containers:
-  - name: pf-10535993-api-staging
-    image: b8it131registry.azurecr.io/pf-10535993-api-staging:pf-10535993-api-staging-8d9542a68aed424c560f23f5bf328f697687dab7-Release-10
-  imagePullSecrets:
-  - name: imagesecretapistaging
----
-apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pf-10535993-api-staging
@@ -29,8 +18,6 @@ spec:
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
-      imagePullSecrets:
-      - name: imagesecretapistaging
 ---
 apiVersion: v1
 kind: Service
