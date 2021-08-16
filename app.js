@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 console.log(process.argv);
-var mongo = process.argv[4];
+//var mongo = process.argv[4];
 //for mongoose connect you can pass in the variable from the release pipeline after npm start//
 //pass an arguement for database connection//
 
-mongoose.connect(mongo, {useNewUrlParser: true}).then(()=>{
+mongoose.connect("mongodb://localhost:27017/ca-db", {useNewUrlParser: true}).then(()=>{
     const app = express();
     app.use(session({
         secret : "caAPISecret",
@@ -19,7 +19,7 @@ mongoose.connect(mongo, {useNewUrlParser: true}).then(()=>{
 
 //origin: 'http://localhost:4200'//
     app.use(express.json());
-    app.use(cors({credentials: true, origin:process.argv[2], origin:process.argv[3]}));
+    app.use(cors({credentials: true, origin:process.argv[2]}));
     app.use("/api", routes);
 
     app.listen(3000, ()=>{

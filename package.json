@@ -1,18 +1,26 @@
 {
-    "name": "ca-api",
-    "version": "1.0.0",
-    "description": "This is the API to be used for the B8IT148 Projects",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node app.js"
-    },
-    "author": "Ehtisham Yasin",
-    "license": "Distributable with modifications for academic purposes only",
-    "dependencies": {
-        "cors": "^2.8.5",
-        "express": "^4.17.1",
-        "express-session": "^1.17.1",
-        "mongoose": "^5.11.19"
-    }
+  "name": "b8it148-10535993-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^5.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ptrfloyd/b8it148-10535993-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ptrfloyd/b8it148-10535993-api/issues"
+  },
+  "homepage": "https://github.com/Ptrfloyd/b8it148-10535993-api#readme"
 }
