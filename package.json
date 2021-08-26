@@ -1,5 +1,5 @@
 {
-  "name": "b8it148-10535993-api",
+  "name": "fp-api",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,20 +7,21 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "mongoose": "^5.13.3"
+    "mongoose": "^5.13.8"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ptrfloyd/b8it148-10535993-api.git"
+    "url": "git+https://github.com/10535993Peter/10535993_FP_API.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ptrfloyd/b8it148-10535993-api/issues"
+    "url": "https://github.com/10535993Peter/10535993_FP_API/issues"
   },
-  "homepage": "https://github.com/Ptrfloyd/b8it148-10535993-api#readme"
+  "homepage": "https://github.com/10535993Peter/10535993_FP_API#readme"
 }
