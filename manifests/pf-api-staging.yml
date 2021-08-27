@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: pf-api-staging
-          image: b8it131registry.azurecr.io/pf-api-staging
+          image: b8it131reg2.azurecr.io/pf-api-staging
           imagePullPolicy: Always
           ports:
           - containerPort: 3000
