@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 console.log(process.argv);
-var mongo = process.argv[4];
+var mongo = process.argv[5];
 // launch api locally by passing in all arguements: node app.js http://localhost:4200 http://localhost:3000 mongodb://localhost:27017/ca-db
 
 mongoose.connect(mongo, {useNewUrlParser: true}).then(()=>{
