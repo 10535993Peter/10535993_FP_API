@@ -59,7 +59,7 @@ app.use(cors({origin: [process.argv[2],process.argv[3],process.argv[4]]})); //"h
 
 // specifying the name for the routes api endpoints
 app.use('/api/users', usersRouter);
-app.use('/api/vaccinationDetails', vaccinationDetailsRouter);
+app.use('/api/adverts', advertsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
