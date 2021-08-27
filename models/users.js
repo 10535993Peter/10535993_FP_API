@@ -4,11 +4,11 @@ const schema = mongoose.Schema({
     id: String,
     firstName: String,
     lastName: String,
-    email: String,
+    username: String,
     password: String,
     lastUpdated: Date,
     dateCreated: Date,
-    avatar: String,
+    emailaddress: String,
     lastLogin: Date
 });
 
