@@ -18,7 +18,7 @@ mongoose.connect(mongo, {useNewUrlParser: true}).then(()=>{
 
 ////origin: 'http://localhost:4200'//
     app.use(express.json());
-    app.use(cors({credentials: true, origin:[process.argv[2], process.argv[3]]}));
+    app.use(cors({credentials: true, origin:[process.argv[2], process.argv[3], process.argv[4]]}));
     app.use("/api", routes);
     app.listen(3000, ()=>{
         console.log("CA API started on port 3000, test using http://localhost:3000/");
