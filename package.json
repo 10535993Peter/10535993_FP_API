@@ -9,11 +9,13 @@
     "express-session": "^1.17.2",
     "mongoose": "^5.13.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --inspect ./bin/www",
-    "autostart": "nodemon ./bin/www"
+    "start": "node app.js",
+    "autostart": "nodemon app.js"
   },
   "repository": {
     "type": "git",
