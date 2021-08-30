@@ -132,22 +132,16 @@ router.post("/vendors", async(req, res, next)=>{
     res.send({status: "success", "vendor": vendor});
 });
 
-
-// router.post("/vendors", function(req, res, next){
-//     Vendor.create(req.body).then(function(vendor){
-//         res.send(vendor);
-//     }).catch(next);
-// });
-
 //get a full list of vendors from the database
 router.get("/vendors", async (req, res, next)=>{
     const vendor = await Vendor.find();
     res.send(vendor);
 });
 
+//get a list of vendors that match the company name 
 router.get("/vendors/:company", async (req, res, next)=>{   
         try {
-            Vendor.findOne({company: req.params.company}).then(function(vendor){
+            Vendor.find({company: req.params.company}).then(function(vendor){
             res.send(vendor);
         });
         } catch {

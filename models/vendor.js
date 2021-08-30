@@ -9,6 +9,7 @@ const VendorSchema = new Schema({
     address: String,
     internalContact: String,
     sector: String,
+    status: {type: String, default: "active"},
     lastUpdated: Date,
     dateCreated: Date
 });

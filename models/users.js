@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
 const schema = mongoose.Schema({
-    id: String,
     firstName: String,
     lastName: String,
     email: String,
     password: String,
     mobile: String,
     company: String,
+    status: {type: String, default: "active"},
     lastUpdated: Date,
     dateCreated: Date,
     lastLogin: Date

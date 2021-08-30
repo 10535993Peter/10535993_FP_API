@@ -6,6 +6,8 @@ const routes = require("./routes");
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 console.log(process.argv);
 var mongo = process.argv[4];
 
