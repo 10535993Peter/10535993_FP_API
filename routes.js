@@ -146,7 +146,7 @@ router.get("/vendors/:company", async (req, res, next)=>{
         });
         } catch {
         res.status(404);
-        res.send({error: "The advert you're looking for doesn't exist!"});
+        res.send({error: "The vendor you're looking for doesn't exist!"});
     }
 });
 
