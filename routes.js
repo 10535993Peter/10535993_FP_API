@@ -169,7 +169,7 @@ router.delete("/vendors/:id", async (req, res, next)=>{
 
 // Users
 //add a new user to the database
-router.post("/register", async(req, res, next)=>{
+router.post("/users", async(req, res, next)=>{
     const user = new Users({
         id: req.body.id,
         firstName: req.body.firstName,
@@ -204,4 +204,15 @@ router.put("/users/:id", async (req, res, next)=>{
 router.delete("/users/:id", async (req, res, next)=>{
     const users = await Vendor.find();
     res.send(users);
+});
+
+router.get("/users/:email", async (req, res, next)=>{   
+    try {
+        Vendor.find({email: req.params.email}).then(function(user){
+        res.send(user);
+    });
+    } catch {
+    res.status(404);
+    res.send({error: "The email you're looking for doesn't exist!"});
+}
 });
