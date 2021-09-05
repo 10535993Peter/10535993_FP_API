@@ -3,11 +3,13 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema({
     firstName: String,
     lastName: String,
-    email: String,
-    password: String,
+    email: {type: String, required: true},
+    password: {type: String, required: true},
+    role: {type: String, default: 'basic', enum: ["basic","admin"]},
+    accessToken: String,
     mobile: String,
     company: String,
-    status: {type: String, default: "active"},
+    status: {type: String, default: "active", enum: ["active","inactive"]},
     lastUpdated: Date,
     dateCreated: Date,
     lastLogin: Date

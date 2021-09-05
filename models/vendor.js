@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 //create Vendors schema and model
 const VendorSchema = new Schema({
+    _id: String,
     company: String,
     companyContactName: String,
     companyEmail: String,
