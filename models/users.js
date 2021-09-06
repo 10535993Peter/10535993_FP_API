@@ -12,10 +12,15 @@ const schema = mongoose.Schema({
     status: {type: String, default: "active", enum: ["active","inactive"]},
     lastUpdated: Date,
     dateCreated: Date,
-    lastLogin: Date
+    lastLogin: Date,
+    documents: {type: Array}
 });
 
 module.exports = mongoose.model("users", schema);
+
+
+//******ROUGHWORK **********/
+
 
 // const mongoose = require("mongoose");
 // const uniqueValidator = require("mongoose-unique-validator");

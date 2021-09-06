@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 //create Vendors schema and model
 const VendorSchema = new Schema({
-    _id: String,
     company: String,
     companyContactName: String,
     companyEmail: String,
@@ -14,6 +13,13 @@ const VendorSchema = new Schema({
     lastUpdated: Date,
     dateCreated: Date
 });
+
+const Vendor = mongoose.model('vendor', VendorSchema);
+
+module.exports = Vendor;
+
+
+//******ROUGHWORK **********/
 
 // //create Vendors schema and model
 // const VendorSchema = new Schema({
@@ -28,7 +34,3 @@ const VendorSchema = new Schema({
 // });
 
 //could add in additional fields later such as "active", "Type", "size" etc 
-
-const Vendor = mongoose.model('vendor', VendorSchema);
-
-module.exports = Vendor;
